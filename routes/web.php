@@ -17,19 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Auth
-Auth::routes(['verify'=> true]);
+Auth::routes(['verify' => true]);
 // Client
-    Route::get('/', function () {
-        return view('client.home');
-    })->name('home');
-    Route::get('/lien-he', function () {
-        return view('client.contact');
-    })->name('contact')->middleware('verified');
-    
-    Route::get('/tin-tuc', [IndexController::class,'blog'])->name('blog');
-    Route::get('/danh-muc/{slug}', [IndexController::class,'category'])->name('category');
-    Route::get('/tin-tuc/{slug}', [IndexController::class,'detail_article'])->name('detail_article');
-    Route::get('/tim-kiem', [IndexController::class,'search'])->name('tim-kiem');
+Route::get('/', [IndexController::class, 'home'])->name('home');
+Route::get('/lien-he', [IndexController::class, 'contact'])->name('contact')->middleware('verified');
+Route::get('/tai-khoan', [IndexController::class, 'myAccount'])->name('myAccount')->middleware('verified');
+Route::get('/tin-tuc', [IndexController::class, 'blog'])->name('blog');
+Route::get('/danh-muc/{slug}', [IndexController::class, 'category'])->name('category');
+Route::get('/tin-tuc/{slug}', [IndexController::class, 'detail_article'])->name('detail_article');
+Route::get('/tim-kiem', [IndexController::class, 'search'])->name('tim-kiem');
+
+Route::get('quan-ly-bai-viet',[IndexController::class,'manage_article'])->name('manage_article');
+Route::get('them-bai-viet',[IndexController::class,'add_article'])->name('add_article');
+Route::post('them-bai-viet',[IndexController::class,'store_article']);
 // Admin
 Route::prefix('/admin')->middleware(['auth', 'checkRole'])->group(function () {
     Route::get('/', function () {

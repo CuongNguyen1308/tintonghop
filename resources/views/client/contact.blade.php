@@ -1,4 +1,7 @@
 @extends('client.layouts.master')
+@section('title')
+    Liên hệ với chúng tôi
+@endsection
 @section('content')
     <div class="container-fluid contact_us_bg_img">
         <div class="container">
@@ -69,12 +72,12 @@
                             <input type="text" class="form-control fh5co_contact_text_box" placeholder="E-mail" />
                         </div>
                         <div class="col-6 py-3">
-                            <input type="text" class="form-control fh5co_contact_text_box" placeholder="Subject" />
+                            <input type="text" class="form-control fh5co_contact_text_box" placeholder="Chủ đề" />
                         </div>
                         <div class="col-12 py-3">
-                            <textarea class="form-control fh5co_contacts_message" placeholder="Message"></textarea>
+                            <textarea class="form-control fh5co_contacts_message" placeholder="Tin nhắn"></textarea>
                         </div>
-                        <div class="col-12 py-3 text-center"> <a href="#" class="btn contact_btn">Send Message</a>
+                        <div class="col-12 py-3 text-center"> <a href="#" class="btn contact_btn">Gửi tin nhắn</a>
                         </div>
                     </form>
                 </div>

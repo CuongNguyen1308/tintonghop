@@ -1,4 +1,7 @@
 @extends('client.layouts.master')
+@section('title')
+    {{ $detail_article->name }} | 24 News
+@endsection
 @section('content')
     {{-- <div id="fh5co-title-box"
         style="background-image: url({{ asset('theme/client/images/camila-cordeiro-114636.jpg') }}); background-position: 50% 90.5px;"

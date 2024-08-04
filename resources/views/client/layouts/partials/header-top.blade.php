@@ -35,10 +35,11 @@
 
                 @if (Auth::check())
                     <div class="d-inline-block text-center dd_position_relative ">
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button class="form-control fh5co_text_select_option" type="submit">{{ Auth::user()->name }}</button>
-                        </form>
+                        </form> --}}
+                        <a class="form-control fh5co_text_select_option" href="{{ route('myAccount') }}">{{ Auth::user()->name }}</a>
                     </div>
                 @else
                     <div class="d-inline-block text-center dd_position_relative ">

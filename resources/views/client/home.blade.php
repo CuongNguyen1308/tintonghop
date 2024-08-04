@@ -3,64 +3,108 @@
     <div class="container-fluid paddding mb-5">
         <div class="row mx-0">
             <div class="col-md-6 col-12 paddding animate-box" data-animate-effect="fadeIn">
-                <div class="fh5co_suceefh5co_height"><img src="{{ asset('theme/client/images/nick-karvounis-78711.jpg') }}" alt="img" />
+                <div class="fh5co_suceefh5co_height">
+                    @php
+                        $img_check = substr($article_banner[0]->image, 0, 5);
+                    @endphp
+                    @if ($img_check == 'https')
+                        <img src="{{ $article_banner[0]->image }}" alt="" width="">
+                    @else
+                        <img src="{{ asset('uploads/' . $article_banner[0]->image) }}" alt="" width="">
+                    @endif
                     <div class="fh5co_suceefh5co_height_position_absolute"></div>
                     <div class="fh5co_suceefh5co_height_position_absolute_font">
-                        <div class=""><a href="#" class="color_fff"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;Dec
-                                31,2017
+                        <div class=""><a href="#" class="color_fff"> <i
+                                    class="fa fa-clock-o"></i>&nbsp;&nbsp;{{ date('d/m/Y', strtotime($article_banner[0]->created_at)) }}
                             </a></div>
-                        <div class=""><a href="single.html" class="fh5co_good_font"> After all is said and done, more
-                                is
-                                said than done </a></div>
+                        <div class=""><a href="{{ route('detail_article', $article_banner[0]->slug) }}"
+                                class="fh5co_good_font"> {{ $article_banner[0]->name }} </a></div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
-                        <div class="fh5co_suceefh5co_height_2"><img src="{{ asset('theme/client/images/science-578x362.jpg') }}" alt="img" />
+                        <div class="fh5co_suceefh5co_height_2">
+                            @php
+                                $img_check = substr($article_banner[1]->image, 0, 5);
+                            @endphp
+                            @if ($img_check == 'https')
+                                <img src="{{ $article_banner[1]->image }}" alt="" width="">
+                            @else
+                                <img src="{{ asset('uploads/' . $article_banner[1]->image) }}" alt=""
+                                    width="">
+                            @endif
                             <div class="fh5co_suceefh5co_height_position_absolute"></div>
                             <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                                 <div class=""><a href="#" class="color_fff"> <i
-                                            class="fa fa-clock-o"></i>&nbsp;&nbsp;Oct
-                                        28,2017 </a></div>
-                                <div class=""><a href="single.html" class="fh5co_good_font_2"> After all is said and
-                                        done, <br>more is said than done </a></div>
+                                            class="fa fa-clock-o"></i>&nbsp;&nbsp;{{ date('d/m/Y', strtotime($article_banner[1]->created_at)) }}</a>
+                                </div>
+                                <div class=""><a href="{{ route('detail_article', $article_banner[1]->slug) }}"
+                                        class="fh5co_good_font_2"> {{ $article_banner[1]->name }} </a></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
-                        <div class="fh5co_suceefh5co_height_2"><img src="{{ asset('theme/client/images/joe-gardner-75333.jpg') }}" alt="img" />
+                        <div class="fh5co_suceefh5co_height_2">
+                            @php
+                                $img_check = substr($article_banner[2]->image, 0, 5);
+                            @endphp
+                            @if ($img_check == 'https')
+                                <img src="{{ $article_banner[2]->image }}" alt="" width="">
+                            @else
+                                <img src="{{ asset('uploads/' . $article_banner[2]->image) }}" alt=""
+                                    width="">
+                            @endif
                             <div class="fh5co_suceefh5co_height_position_absolute"></div>
                             <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                                 <div class=""><a href="#" class="color_fff"> <i
-                                            class="fa fa-clock-o"></i>&nbsp;&nbsp;Oct 28,2017 </a></div>
-                                <div class=""><a href="single.html" class="fh5co_good_font_2"> After all is said and
-                                        done... </a></div>
+                                            class="fa fa-clock-o"></i>&nbsp;&nbsp;{{ date('d/m/Y', strtotime($article_banner[2]->created_at)) }}
+                                    </a></div>
+                                <div class=""><a href="{{ route('detail_article', $article_banner[2]->slug) }}"
+                                        class="fh5co_good_font_2"> {{ $article_banner[2]->name }}</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
-                        <div class="fh5co_suceefh5co_height_2"><img src="{{ asset('theme/client/images/ryan-moreno-98837.jpg') }}" alt="img" />
+                        <div class="fh5co_suceefh5co_height_2">
+                            @php
+                                $img_check = substr($article_banner[3]->image, 0, 5);
+                            @endphp
+                            @if ($img_check == 'https')
+                                <img src="{{ $article_banner[3]->image }}" alt="" width="">
+                            @else
+                                <img src="{{ asset('uploads/' . $article_banner[3]->image) }}" alt=""
+                                    width="">
+                            @endif
                             <div class="fh5co_suceefh5co_height_position_absolute"></div>
                             <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                                 <div class=""><a href="#" class="color_fff"> <i
-                                            class="fa fa-clock-o"></i>&nbsp;&nbsp;Oct
-                                        28,2017 </a></div>
-                                <div class=""><a href="single.html" class="fh5co_good_font_2"> After all is said and
-                                        done, more is said than done </a></div>
+                                            class="fa fa-clock-o"></i>&nbsp;&nbsp;{{ date('d/m/Y', strtotime($article_banner[3]->created_at)) }}
+                                    </a></div>
+                                <div class=""><a href="{{ route('detail_article', $article_banner[3]->slug) }}"
+                                        class="fh5co_good_font_2">{{ $article_banner[3]->name }}</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
-                        <div class="fh5co_suceefh5co_height_2"><img src="{{ asset('theme/client/images/10-1-1-875x500.jpg') }}" alt="img" />
+                        <div class="fh5co_suceefh5co_height_2">
+                            @php
+                                $img_check = substr($article_banner[4]->image, 0, 5);
+                            @endphp
+                            @if ($img_check == 'https')
+                                <img src="{{ $article_banner[4]->image }}" alt="" width="">
+                            @else
+                                <img src="{{ asset('uploads/' . $article_banner[4]->image) }}" alt=""
+                                    width="">
+                            @endif
                             <div class="fh5co_suceefh5co_height_position_absolute"></div>
                             <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                                 <div class=""><a href="#" class="color_fff"> <i
-                                            class="fa fa-clock-o"></i>&nbsp;&nbsp;Oct
-                                        28,2017 </a></div>
-                                <div class=""><a href="single.html" class="fh5co_good_font_2"> After all is said and
-                                        done, more is said... </a></div>
+                                            class="fa fa-clock-o"></i>&nbsp;&nbsp;{{ date('d/m/Y', strtotime($article_banner[4]->created_at)) }}</a>
+                                </div>
+                                <div class=""><a href="{{ route('detail_article', $article_banner[4]->slug) }}"
+                                        class="fh5co_good_font_2"> {{ $article_banner[4]->name }}</div>
                             </div>
                         </div>
                     </div>
@@ -74,66 +118,29 @@
                 <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Xu hướng</div>
             </div>
             <div class="owl-carousel owl-theme js" id="slider1">
-                <div class="item px-2">
-                    <div class="fh5co_latest_trading_img_position_relative">
-                        <div class="fh5co_latest_trading_img"><img src="{{ asset('theme/client/images/allef-vinicius-108153.jpg') }}" alt=""
-                                class="fh5co_img_special_relative" /></div>
-                        <div class="fh5co_latest_trading_img_position_absolute"></div>
-                        <div class="fh5co_latest_trading_img_position_absolute_1">
-                            <a href="single.html" class="text-white"> Here's a new way to take better photos for
-                                instagram </a>
-                            <div class="fh5co_latest_trading_date_and_name_color"> Walter Johson - March 7,2017</div>
+                @foreach ($article_trending as $value)
+                    <div class="item px-2">
+                        <div class="fh5co_latest_trading_img_position_relative">
+                            <div class="fh5co_latest_trading_img">
+                                @php
+                                    $img_check = substr($value->image, 0, 5);
+                                @endphp
+                                @if ($img_check == 'https')
+                                    <img src="{{ $value->image }}" alt="" width="">
+                                @else
+                                    <img src="{{ asset('uploads/' . $value->image) }}" alt="" width="">
+                                @endif
+                            </div>
+                            <div class="fh5co_latest_trading_img_position_absolute"></div>
+                            <div class="fh5co_latest_trading_img_position_absolute_1">
+                                <a href="{{ route('detail_article', $value->slug) }}" class="text-white">
+                                    {{ $value->name }} </a>
+                                <div class="fh5co_latest_trading_date_and_name_color"> {{ $value->user->name }} -
+                                    {{ date('d/m/Y', strtotime($value->created_at)) }}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item px-2">
-                    <div class="fh5co_latest_trading_img_position_relative">
-                        <div class="fh5co_latest_trading_img"><img src="{{ asset('theme/client/images/abigail-keenan-65477.jpg') }}" alt=""
-                                class="fh5co_img_special_relative" /></div>
-                        <div class="fh5co_latest_trading_img_position_absolute"></div>
-                        <div class="fh5co_latest_trading_img_position_absolute_1">
-                            <a href="single.html" class="text-white"> Here's a new way to take better photos for
-                                instagram </a>
-                            <div class="fh5co_latest_trading_date_and_name_color"> Walter Johson - March 7,2017</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item px-2">
-                    <div class="fh5co_latest_trading_img_position_relative">
-                        <div class="fh5co_latest_trading_img"><img src="{{ asset('theme/client/images/ryan-moreno-98837.jpg') }}" alt=""
-                                class="fh5co_img_special_relative" /></div>
-                        <div class="fh5co_latest_trading_img_position_absolute"></div>
-                        <div class="fh5co_latest_trading_img_position_absolute_1">
-                            <a href="single.html" class="text-white"> Here's a new way to take better photos for
-                                instagram </a>
-                            <div class="fh5co_latest_trading_date_and_name_color"> Walter Johson - March 7,2017</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item px-2">
-                    <div class="fh5co_latest_trading_img_position_relative">
-                        <div class="fh5co_latest_trading_img"><img src="{{ asset('theme/client/images/science-578x362.jpg') }}" alt=""
-                                class="fh5co_img_special_relative" /></div>
-                        <div class="fh5co_latest_trading_img_position_absolute"></div>
-                        <div class="fh5co_latest_trading_img_position_absolute_1">
-                            <a href="single.html" class="text-white"> Here's a new way to take better photos for
-                                instagram </a>
-                            <div class="fh5co_latest_trading_date_and_name_color"> Walter Johson - March 7,2017</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item px-2">
-                    <div class="fh5co_latest_trading_img_position_relative">
-                        <div class="fh5co_latest_trading_img"><img src="{{ asset('theme/client/images/nick-karvounis-78711.jpg') }}" alt=""
-                                class="fh5co_img_special_relative" /></div>
-                        <div class="fh5co_latest_trading_img_position_absolute"></div>
-                        <div class="fh5co_latest_trading_img_position_absolute_1">
-                            <a href="single.html" class="text-white"> Here's a new way to take better photos for
-                                instagram </a>
-                            <div class="fh5co_latest_trading_date_and_name_color"> Walter Johson - March 7,2017</div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -143,50 +150,30 @@
                 <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tin mới</div>
             </div>
             <div class="owl-carousel owl-theme" id="slider2">
-                <div class="item px-2">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_news_img"><img src="{{ asset('theme/client/images/39-324x235.jpg') }}" alt="" /></div>
-                        <div>
-                            <a href="single.html" class="d-block fh5co_small_post_heading"><span class="">The top
-                                    10
-                                    best computer speakers in the market</span></a>
-                            <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
+
+                @foreach ($article_new as $value)
+                    <div class="item px-2">
+                        <div class="fh5co_hover_news_img">
+                            <div class="fh5co_news_img">
+                                @php
+                                    $img_check = substr($value->image, 0, 5);
+                                @endphp
+                                @if ($img_check == 'https')
+                                    <img src="{{ $value->image }}" alt="" width="">
+                                @else
+                                    <img src="{{ asset('uploads/' . $value->image) }}" alt="" width="">
+                                @endif
+                            </div>
+                            <div>
+                                <a href="{{ route('detail_article', $value->slug) }}"
+                                    class="d-block fh5co_small_post_heading"><span
+                                        class="">{{ $value->name }}</span></a>
+                                <div class="c_g"><i class="fa fa-clock-o"></i>
+                                    {{ date('d/m/Y', strtotime($value->created_at)) }}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item px-2">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_news_img"><img src="{{ asset('theme/client/images/joe-gardner-75333.jpg') }}" alt="" /></div>
-                        <div>
-                            <a href="single.html" class="d-block fh5co_small_post_heading"><span class="">The top
-                                    10
-                                    best computer speakers in the market</span></a>
-                            <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item px-2">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_news_img"><img src="{{ asset('theme/client/images/ryan-moreno-98837.jpg') }}" alt="" /></div>
-                        <div>
-                            <a href="single.html" class="d-block fh5co_small_post_heading"><span class="">The top
-                                    10
-                                    best computer speakers in the market</span></a>
-                            <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item px-2">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_news_img"><img src="{{ asset('theme/client/images/seth-doyle-133175.jpg') }}" alt="" /></div>
-                        <div>
-                            <a href="single.html" class="d-block fh5co_small_post_heading"><span class="">The top
-                                    10
-                                    best computer speakers in the market</span></a>
-                            <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -316,157 +303,39 @@
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tin hot</div>
                     </div>
-                    <div class="row pb-4">
-                        <div class="col-md-5">
-                            <div class="fh5co_hover_news_img">
-                                <div class="fh5co_news_img"><img src="{{ asset('theme/client/images/nathan-mcbride-229637.jpg') }}" alt="" />
+                    @foreach ($article_hot as $value)
+                        <div class="row pb-4">
+                            <div class="col-md-5">
+                                <div class="fh5co_hover_news_img">
+                                    <div class="fh5co_news_img">
+                                        @php
+                                            $img_check = substr($value->image, 0, 5);
+                                        @endphp
+                                        @if ($img_check == 'https')
+                                            <img src="{{ $value->image }}" alt="" width="">
+                                        @else
+                                            <img src="{{ asset('uploads/' . $value->image) }}" alt=""
+                                                width="">
+                                        @endif
+                                    </div>
+                                    <div></div>
                                 </div>
-                                <div></div>
                             </div>
-                        </div>
-                        <div class="col-md-7 animate-box">
-                            <a href="single.html" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
-                                nostrud quis xercitation ullamco. </a> <a href="single.html" class="fh5co_mini_time py-3">
-                                Thomson Smith -
-                                April 18,2016 </a>
-                            <div class="fh5co_consectetur"> Amet consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row pb-4">
-                        <div class="col-md-5">
-                            <div class="fh5co_hover_news_img">
-                                <div class="fh5co_news_img"><img src="{{ asset('theme/client/images/ryan-moreno-98837.jpg') }}" alt="" />
+                            <div class="col-md-7 animate-box">
+                                <a href="{{ route('detail_article', $value->slug) }}" class="fh5co_magna py-2">
+                                    {{ $value->name }} </a> <a href="" class="fh5co_mini_time py-3">
+                                    {{ $value->user->name }} - {{ date('d/m/Y', strtotime($value->created_at)) }} </a>
+                                <div class="fh5co_consectetur"> {{ $value->summary }}
                                 </div>
-                                <div></div>
                             </div>
                         </div>
-                        <div class="col-md-7">
-                            <a href="single.html" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
-                                nostrud quis xercitation ullamco. </a> <a href="#" class="fh5co_mini_time py-3">
-                                Thomson
-                                Smith -
-                                April 18,2016 </a>
-                            <div class="fh5co_consectetur"> Quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                ea
-                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                dolore.
-                            </div>
-                            <ul class="fh5co_gaming_topikk pt-3">
-                                <li> Why 2017 Might Just Be the Worst Year Ever for Gaming</li>
-                                <li> Ghost Racer Wants to Be the Most Ambitious Car Game</li>
-                                <li> New Nintendo Wii Console Goes on Sale in Strategy Reboot</li>
-                                <li> You and Your Kids can Enjoy this News Gaming Console</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row pb-4">
-                        <div class="col-md-5">
-                            <div class="fh5co_hover_news_img">
-                                <div class="fh5co_news_img">
-                                    <img src="{{ asset('theme/client/images/photo-1449157291145-7efd050a4d0e-578x362.jpg') }}" alt="" />
-                                </div>
-                                <div></div>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <a href="single.html" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
-                                nostrud quis xercitation ullamco. </a> <a href="#" class="fh5co_mini_time py-3">
-                                Thomson
-                                Smith -
-                                April 18,2016 </a>
-                            <div class="fh5co_consectetur"> Quis nostrud xercitation ullamco laboris nisi aliquip ex ea
-                                commodo
-                                consequat.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row pb-4">
-                        <div class="col-md-5">
-                            <div class="fh5co_hover_news_img">
-                                <div class="fh5co_news_img"><img src="{{ asset('theme/client/images/office-768x512.jpg') }}" alt="" /></div>
-                                <div></div>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <a href="single.html" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
-                                nostrud quis xercitation ullamco. </a> <a href="#" class="fh5co_mini_time py-3">
-                                Thomson
-                                Smith -
-                                April 18,2016 </a>
-                            <div class="fh5co_consectetur"> Amet consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
+
                 </div>
-                <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-                    <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="fh5co_tags_all">
-                        <a href="#" class="fh5co_tagg">Business</a>
-                        <a href="#" class="fh5co_tagg">Technology</a>
-                        <a href="#" class="fh5co_tagg">Sport</a>
-                        <a href="#" class="fh5co_tagg">Art</a>
-                        <a href="#" class="fh5co_tagg">Lifestyle</a>
-                        <a href="#" class="fh5co_tagg">Three</a>
-                        <a href="#" class="fh5co_tagg">Photography</a>
-                        <a href="#" class="fh5co_tagg">Lifestyle</a>
-                        <a href="#" class="fh5co_tagg">Art</a>
-                        <a href="#" class="fh5co_tagg">Education</a>
-                        <a href="#" class="fh5co_tagg">Social</a>
-                        <a href="#" class="fh5co_tagg">Three</a>
-                    </div>
-                    <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Phổ biến nhất</div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="{{ asset('theme/client/images/download (1).jpg') }}" alt="img" class="fh5co_most_trading" />
-                        </div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.
-                            </div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="{{ asset('theme/client/images/allef-vinicius-108153.jpg') }}" alt="img" class="fh5co_most_trading" />
-                        </div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Enim ad minim veniam nostrud xercitation ullamco.
-                            </div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="{{ asset('theme/client/images/download (2).jpg') }}" alt="img" class="fh5co_most_trading" />
-                        </div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.
-                            </div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center"><img src="{{ asset('theme/client/images/seth-doyle-133175.jpg') }}" alt="img"
-                                class="fh5co_most_trading" /></div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.
-                            </div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
-                </div>
+                @include('client.layouts.partials.aside')
             </div>
-            <div class="row mx-0 animate-box" data-animate-effect="fadeInUp">
+            {{-- <div class="row mx-0 animate-box" data-animate-effect="fadeInUp">
                 <div class="col-12 text-center pb-4 pt-4">
                     <a href="#" class="btn_mange_pagging"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp;
                         Previous</a>
@@ -477,7 +346,7 @@
                     <a href="#" class="btn_mange_pagging">Next <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;
                     </a>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection

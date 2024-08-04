@@ -4,7 +4,7 @@
     </div>
     <div class="clearfix"></div>
     <div class="fh5co_tags_all">
-        @foreach ($category as $item)
+        @foreach ($cate_view as $item)
             <a href="{{ route('category',$item->slug) }}" class="fh5co_tagg">{{ $item->name }}</a>
         @endforeach
 

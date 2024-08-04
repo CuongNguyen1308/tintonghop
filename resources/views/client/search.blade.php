@@ -1,4 +1,7 @@
 @extends('client.layouts.master')
+@section('title')
+    Từ khóa tìm kiếm: {{ $search }} | Tin tức 24/7
+@endsection
 @section('content')
     <div class=" pb-4 pt-4 paddding">
         <div class="container paddding">

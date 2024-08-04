@@ -18,14 +18,6 @@
                         <a class="nav-link" href="{{ url('/lien-he') }}">Liên hệ <span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    @auth
-                        @if (Auth::user()->role == 1)
-                            <li class="nav-item ">
-                                <a class="nav-link" href="{{ url('/admin') }}">Vào trang Admin <span
-                                        class="sr-only">(current)</span></a>
-                            </li>
-                        @endif
-                    @endauth
                 </ul>
             </div>
         </nav>
