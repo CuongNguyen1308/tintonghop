@@ -63,6 +63,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $cate = Category::findOrFail('id');
         $request->validate([
             'name' => 'required'
         ]);
@@ -70,7 +71,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'slug' => $request->slug,
         ];
-        Category::where('id', $id)->update($category);
+        $cate->update($category);
         return redirect()->route('category.index')->with('warning', 'Cập nhật danh mục thành công');
     }
 

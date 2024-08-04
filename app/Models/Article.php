@@ -17,6 +17,7 @@ class Article extends Model
         'category_id',
         'user_id',
         'is_hot',
+        'is_trending',
     ];
     public function Category(){
         return $this->belongsTo(Category::class,'category_id');

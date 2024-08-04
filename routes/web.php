@@ -16,22 +16,21 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('client.home');
-})->name('home');
-Route::get('/contact', function () {
-    return view('client.contact');
-});
-Route::get('/detail', function () {
-    return view('client.detail');
-});
-Route::get('/tin-tuc', [IndexController::class,'blog'])->name('blog');
-Route::get('/danh-muc/{slug}', [IndexController::class,'category'])->name('category');
-Route::get('/tin-tuc/{slug}', [IndexController::class,'detail_article'])->name('detail_article');
-Route::get('/tim-kiem', [IndexController::class,'search'])->name('tim-kiem');
-Auth::routes();
-
+// Auth
+Auth::routes(['verify'=> true]);
+// Client
+    Route::get('/', function () {
+        return view('client.home');
+    })->name('home');
+    Route::get('/lien-he', function () {
+        return view('client.contact');
+    })->name('contact')->middleware('verified');
+    
+    Route::get('/tin-tuc', [IndexController::class,'blog'])->name('blog');
+    Route::get('/danh-muc/{slug}', [IndexController::class,'category'])->name('category');
+    Route::get('/tin-tuc/{slug}', [IndexController::class,'detail_article'])->name('detail_article');
+    Route::get('/tim-kiem', [IndexController::class,'search'])->name('tim-kiem');
+// Admin
 Route::prefix('/admin')->middleware(['auth', 'checkRole'])->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');

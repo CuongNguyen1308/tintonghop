@@ -15,7 +15,7 @@
                         <a class="nav-link" href="{{ url('/tin-tuc') }}">Tin tức <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{ url('/contact') }}">Liên hệ <span
+                        <a class="nav-link" href="{{ url('/lien-he') }}">Liên hệ <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     @auth
