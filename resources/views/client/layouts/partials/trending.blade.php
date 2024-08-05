@@ -18,7 +18,7 @@
                             @endif
                         </div>
                         <div>
-                            <a href="#" class="d-block fh5co_small_post_heading"><span
+                            <a href="{{ route('detail_article', $value->slug) }}" class="d-block fh5co_small_post_heading"><span
                                     class="">{{ $value->name }}</span></a>
                             <div class="c_g"><i class="fa fa-clock-o"></i>
                                 {{ date('d/m/Y', strtotime($value->created_at)) }}</div>

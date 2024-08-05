@@ -40,6 +40,14 @@
                         <span class="hide-menu">Bài viết</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('user.index') }}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-user"></i>
+                        </span>
+                        <span class="hide-menu">Người dùng</span>
+                    </a>
+                </li>
                 
             </ul>
         </nav>

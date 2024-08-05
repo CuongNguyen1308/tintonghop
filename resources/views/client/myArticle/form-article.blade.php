@@ -20,7 +20,7 @@
                         @else
                         @section('title', 'Cập nhật bài viết | 24 News')
                         <h5 class="card-title fw-semibold mb-4">Cập nhật bài viết</h5>
-                        <form action="{{ route('article.update', $article->id) }}" method="POST"
+                        <form action="{{ route('update_article', $article->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @method('PUT')
                 @endif

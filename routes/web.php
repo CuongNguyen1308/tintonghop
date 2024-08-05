@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\IndexController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,8 @@ Route::get('/tim-kiem', [IndexController::class, 'search'])->name('tim-kiem');
 Route::get('quan-ly-bai-viet',[IndexController::class,'manage_article'])->name('manage_article');
 Route::get('them-bai-viet',[IndexController::class,'add_article'])->name('add_article');
 Route::post('them-bai-viet',[IndexController::class,'store_article']);
+Route::get('sua-bai-viet/{id}',[IndexController::class,'edit_article'])->name('edit_article');
+Route::post('sua-bai-viet/{id}',[IndexController::class,'update_article']);
 // Admin
 Route::prefix('/admin')->middleware(['auth', 'checkRole'])->group(function () {
     Route::get('/', function () {
@@ -37,4 +40,5 @@ Route::prefix('/admin')->middleware(['auth', 'checkRole'])->group(function () {
     })->name('dashboard');
     Route::resource('category', CategoryController::class);
     Route::resource('article', ArticleController::class);
+    Route::resource('user', UserController::class);
 });

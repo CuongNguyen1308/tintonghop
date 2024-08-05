@@ -13,6 +13,7 @@
         <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Phổ biến nhất</div>
     </div>
     @foreach ($article_popular as $value)
+    <a href="{{ route('detail_article', $value->slug) }}">
         <div class="row pb-3">
             <div class="col-5 align-self-center">
                 @php
@@ -32,5 +33,6 @@
                     {{ date('d/m/Y', strtotime($value->created_at)) }}</div>
             </div>
         </div>
+    </a>
     @endforeach
 </div>

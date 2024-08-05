@@ -45,8 +45,7 @@ class IndexController extends Controller
     public function detail_article($slug)
     {
         $detail_article = Article::with('category')->where('slug', $slug)->first();
-        $view = $detail_article->view += 1;
-        Article::query()->where('id',$detail_article->id)->update(['view'=>$view]);
+        Article::query()->where('id',$detail_article->id)->increment('view',1);
         return view('client.detail', compact('detail_article'));
     }
     public function myAccount(){
@@ -98,5 +97,11 @@ class IndexController extends Controller
             }
             return back()->with('error', $exception->getMessage());
         }
+    }
+    public function edit_article(Article $article){
+        return view('client.myArticle.form-article',compact('article'));
+    }
+    public function update_article(Request $request){
+        
     }
 }
